@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= image_tag(@vacancy.category.img_url) %>
+
 <p>
   <b>Title:</b>
   <%= @vacancy.title %>
@@ -14,7 +16,7 @@
   <b>Price:</b>
   <%= @vacancy.price %>
 </p>
-
+<%= link_to 'Contact', new_contact_path %> <br />
 
 <%= link_to 'Edit', edit_vacancy_path(@vacancy) %> |
 <%= link_to 'Back', vacancies_path %>
