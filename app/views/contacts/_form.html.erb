@@ -1,4 +1,4 @@
-<%= form_for(@contact) do |f| %>
+<%= semantic_form_for(@contact) do |f| %>
   <% if @contact.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
@@ -10,28 +10,22 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :message %><br />
-    <%= f.text_area :message %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+	<%= f.inputs do%>
+	  <div class="field">
+	    <%= f.input :title, :label => "title" %><br />
+	    
+	    <%= f.input :name, :label => "name" %><br />
+	    
+	    <%= f.input :email, :label => "email" %><br />
+	      
+	    <%= f.input :phone, :label => "phone" %><br />
+	      
+	    <%= f.input :message, :label => "message" %><br />    
+	  </div>
+	<% end %>
+	<%= f.buttons do%>
+	  <div class="actions">
+	    <%= f.commit_button %>
+	  </div>
+	<% end %>
 <% end %>

@@ -1,4 +1,4 @@
-<%= form_for(@vacancy) do |f| %>
+<%= semantic_form_for(@vacancy) do |f| %>
   <% if @vacancy.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@vacancy.errors.count, "error") %> prohibited this vacancy from being saved:</h2>
@@ -10,20 +10,16 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br />
-    <%= f.text_field :price %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+	<%= f.inputs do%>
+	  <div class="field">
+	    <%= f.input :title, :label => "title" %><br />
+	    <%= f.input :description, :label => "description" %><br />
+	    <%= f.input :price, :label => "price" %><br />
+	  </div>
+	<% end %>
+	<%= f.buttons do%>
+	   <div class="actions">
+	    <%= f.commit_button %>
+	  </div>
+	<% end %>
 <% end %>
