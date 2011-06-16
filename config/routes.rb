@@ -1,4 +1,6 @@
 WestPartners::Application.routes.draw do
+  resources :categories
+
   resources :contacts
 
   match '/articles', :to => 'pages#articles'
