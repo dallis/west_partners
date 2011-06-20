@@ -16,7 +16,7 @@
   <b>Price:</b>
   <%= @vacancy.price %>
 </p>
-<%= link_to 'Contact', new_contact_path %> <br />
+<%= link_to 'Contact', new_contact_path(:title => @vacancy.title) %> <br />
 
 <%= link_to 'Edit', edit_vacancy_path(@vacancy) %> |
 <%= link_to 'Back', vacancies_path %>

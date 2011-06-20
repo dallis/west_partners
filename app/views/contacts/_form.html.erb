@@ -12,7 +12,7 @@
   <% end %>
 	<%= f.inputs do%>
 	  <div class="field">
-	    <%= f.input :title, :label => "title" %><br />
+	    <%= f.input :title, :label => 'title', :input_html => {:value => params[:title]} %><br />
 	    
 	    <%= f.input :name, :label => "name" %><br />
 	    
