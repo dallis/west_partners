@@ -23,7 +23,7 @@ body {
 
 /*TEXT STYLES*/
 .bodytext {
-	font: 0.7em Tahoma, sans-serif;
+	font: 1em Tahoma, sans-serif;
 	color: #666666;
 }
 
@@ -46,8 +46,8 @@ body {
 	color:#CC0000;
 }
 .smallwhitetext {
-	font: 0.7em Tahoma, sans-serif;
-	font-size: 11px;
+	font: 0.0em Tahoma, sans-serif;
+	font-size: 14px;
 	font-weight:bold;
 	color: #FFFFFF;
 }

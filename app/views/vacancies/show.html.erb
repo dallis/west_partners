@@ -1,6 +1,12 @@
 <p id="notice"><%= notice %></p>
-
-<%= image_tag(@vacancy.category.img_url) %>
+<div id="submenu">
+	<div align="right" class="smallgraytext" style="padding:9px;">
+		<%= link_to("Попередня робота |", @vacancy.previous_vacancy) if @vacancy.previous_vacancy %>
+		<%= link_to("Наступна робота", @vacancy.next_vacancy) if @vacancy.next_vacancy %>
+	</div>
+</div>
+</br>
+<%= image_tag(@vacancy.category.img_url,:alt => @vacancy.title) %>
 
 <p>
   <b>Title:</b>

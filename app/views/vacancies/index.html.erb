@@ -1,21 +1,11 @@
-<h1>Listing vacancies</h1>
+<h1>Перелік наявних робіт</h1>
 
 <table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Price</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @vacancies.each do |vacancy| %>
   <tr>
-    <td><%= vacancy.title %></td>
-    <td><%= vacancy.description %></td>
-    <td><%= vacancy.price %></td>
-    <td><%= link_to 'Show', vacancy %></td>
+    <td><%= link_to vacancy.title, vacancy %></td>
+    <td><%= truncate(vacancy.description,:length => 50, :separator => ' ') %><%= link_to 'дізнатись більше', vacancy %></td>
   <% if user_signed_in? %>
     <td><%= link_to 'Edit', edit_vacancy_path(vacancy) %></td>
     <td><%= link_to 'Destroy', vacancy, :confirm => 'Are you sure?', :method => :delete %></td>

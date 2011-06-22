@@ -1,25 +1,20 @@
 <div id="logo"></div>
 <div id="topheader">
-	<div align="left" class="bodytext">
+	<div align="left" class="smallgraytext">
 		<br />
-		<strong>West Partners</strong><br />
-		Evergreen Terrace 742<br />
-		Kansas Missouri<br />
-		Phone: 432-653-3121<br />
-		sales@thetiecompany.com
+		<strong>Кадрове агенство «West Partners»</strong><br />
+		м.Калуш,Івано-Франківська обл.<br />
+		вул. Євшана 9, каб.109<br />
+		Телефон: +380(097)669-07-62, +380(097)944-57-65<br />
+		skype: West-Partners<br />
+		e-mail:<%= mail_to "westwork8@gmail.com", "westwork8@gmail.com", :encode => "javascript"%>
 	</div>
 	<div id="toplinks" class="smallgraytext">
-		<a href="#">Home</a> | <a href="#">Contact Us</a>
-  		<%= render 'devise/menu/login_items' %>
+		<%= link_to 'west-partners.com.ua', "http://west-partners.com.ua" %>
 	</div>
 </div>
 <div id="menu">
 	<div align="right" class="smallwhitetext" style="padding:9px;">
-		<%= link_to 'Home', root_path %> | <%= link_to 'Vacancies', vacancies_path %> | <%= link_to 'Contacts', contacts_path %> | <a href="#">Our Services</a> | <a href="#">Contact Us</a>
-	</div>
-</div>
-<div id="submenu">
-	<div align="right" class="smallgraytext" style="padding:9px;">
-		<a href="#">Submenu 1</a> | <a href="#">Submenu 2</a> | <a href="#">Submenu 3</a> | <a href="#">Submenu 4</a>
+		<%= link_to 'Головна', root_path %> | <%= link_to 'Робота', vacancies_path %> |<%= link_to 'Що потрібно?', 'faq' %> |<%= link_to 'Статті', 'articles' %> | <%= link_to 'Задати питання', new_contact_path %> 
 	</div>
 </div>
