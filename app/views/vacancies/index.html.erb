@@ -4,6 +4,7 @@
 
 <% @vacancies.each do |vacancy| %>
   <tr>
+  	<td><%= image_tag(vacancy.category.img_url,:size => "70x70",:alt => vacancy.title) %></td>
     <td><%= link_to vacancy.title, vacancy %></td>
     <td><%= truncate(vacancy.description,:length => 50, :separator => ' ') %><%= link_to 'дізнатись більше', vacancy %></td>
   <% if user_signed_in? %>
