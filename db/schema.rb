@@ -13,21 +13,21 @@
 ActiveRecord::Schema.define(:version => 20110704161156) do
 
   create_table "categories", :force => true do |t|
-    t.string    "title"
-    t.string    "img_url"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
+    t.string   "title"
+    t.string   "img_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "contacts", :force => true do |t|
-    t.string    "title"
-    t.string    "name"
-    t.string    "email"
-    t.string    "phone"
-    t.text      "message"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.integer   "vacancy_id"
+    t.string   "title"
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.text     "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "vacancy_id"
   end
 
   create_table "users", :force => true do |t|
@@ -48,12 +48,12 @@ ActiveRecord::Schema.define(:version => 20110704161156) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
   create_table "vacancies", :force => true do |t|
-    t.string    "title"
-    t.text      "description"
-    t.string    "price"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.integer   "category_id"
+    t.string   "title"
+    t.text     "description"
+    t.string   "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "category_id"
   end
 
 end
