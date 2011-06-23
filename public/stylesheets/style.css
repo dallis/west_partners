@@ -16,6 +16,12 @@ body {
 #leftpanel{float:left; width:274px;}
 #footer{float:left; width:800px; background-color:#F0F0F0; padding:10px;}
 
+/*my*/
+#titleind{float:left}
+#imgind{float :left}
+#textind{float :left; margin: 10px 0 0 100px}
+.line { clear: both; border-bottom: 1px solid #ddd; margin: 0 0 20px; }
+.clear { clear: both; }
 /*GRAY PANEL*/
 .graypanel{
 	border:solid 1px #666666; background-color:#F7F7F7; padding:10px; margin:10px;

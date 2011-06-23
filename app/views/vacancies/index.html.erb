@@ -1,19 +1,24 @@
 <h1>Перелік наявних робіт</h1>
 
-<table>
 
 <% @vacancies.each do |vacancy| %>
-  <tr>
-  	<td><%= image_tag(vacancy.category.img_url,:size => "70x70",:alt => vacancy.title) %></td>
-    <td><%= link_to vacancy.title, vacancy %></td>
-    <td><%= truncate(vacancy.description,:length => 50, :separator => ' ') %><%= link_to 'дізнатись більше', vacancy %></td>
+    <div id='titleind'>
+  	<%= link_to vacancy.title, vacancy %>
+  	</div>
+  	<div class='clear'></div>
+  	<div id='imgind'>
+  		<%= image_tag(vacancy.category.img_url,:size => "100x100",:alt => vacancy.title) %>
+  	</div>
+  	<div id='textind'>
+    <%= truncate(vacancy.description,:length => 100, :separator => ' ') %></br>
+    <%= link_to 'дізнатись більше', vacancy %>
+    </div>
   <% if user_signed_in? %>
-    <td><%= link_to 'Edit', edit_vacancy_path(vacancy) %></td>
-    <td><%= link_to 'Destroy', vacancy, :confirm => 'Are you sure?', :method => :delete %></td>
+    <%= link_to 'Edit', edit_vacancy_path(vacancy) %>
+    <%= link_to 'Destroy', vacancy, :confirm => 'Are you sure?', :method => :delete %>
   <% end %>
-  </tr>
+  <div class='line'></div>
 <% end %>
-</table>
 
 <br />
 <% if user_signed_in? %> <%= link_to 'New Vacancy', new_vacancy_path %> <% end %>
