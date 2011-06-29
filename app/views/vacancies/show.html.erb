@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @vacancy.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @vacancy.description %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @vacancy.price %>
+</p>
+
+
+<%= link_to 'Edit', edit_vacancy_path(@vacancy) %> |
+<%= link_to 'Back', vacancies_path %>

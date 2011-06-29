@@ -1,0 +1,27 @@
+<h1>Listing vacancies</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @vacancies.each do |vacancy| %>
+  <tr>
+    <td><%= vacancy.title %></td>
+    <td><%= vacancy.description %></td>
+    <td><%= vacancy.price %></td>
+    <td><%= link_to 'Show', vacancy %></td>
+    <td><%= link_to 'Edit', edit_vacancy_path(vacancy) %></td>
+    <td><%= link_to 'Destroy', vacancy, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Vacancy', new_vacancy_path %>
