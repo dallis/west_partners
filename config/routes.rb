@@ -1,8 +1,7 @@
 WestPartners::Application.routes.draw do
+  resources :contacts
+
   match '/articles', :to => 'pages#articles'
-
-  match '/contact', :to => 'pages#contact'
-
   match '/faq', :to => 'pages#faq'
 
   resources :vacancies
