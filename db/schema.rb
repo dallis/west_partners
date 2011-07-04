@@ -10,33 +10,50 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110629194510) do
+ActiveRecord::Schema.define(:version => 20110704161156) do
 
   create_table "categories", :force => true do |t|
-    t.string   "title"
-    t.string   "img_url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "title"
+    t.string    "img_url"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "contacts", :force => true do |t|
-    t.string   "title"
-    t.string   "name"
-    t.string   "email"
-    t.string   "phone"
-    t.text     "message"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "vacancy_id"
+    t.string    "title"
+    t.string    "name"
+    t.string    "email"
+    t.string    "phone"
+    t.text      "message"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.integer   "vacancy_id"
   end
 
-  create_table "vacancies", :force => true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.string   "price"
+  create_table "users", :force => true do |t|
+    t.string   "email",                                 :default => "", :null => false
+    t.string   "encrypted_password",     :limit => 128, :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",                         :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "category_id"
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+
+  create_table "vacancies", :force => true do |t|
+    t.string    "title"
+    t.text      "description"
+    t.string    "price"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.integer   "category_id"
   end
 
 end

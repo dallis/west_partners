@@ -1,4 +1,6 @@
 class ContactsController < ApplicationController
+  before_filter :authenticate_user! , :except => "new"
+	
   # GET /contacts
   # GET /contacts.xml
   def index

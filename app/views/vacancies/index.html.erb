@@ -16,12 +16,13 @@
     <td><%= vacancy.description %></td>
     <td><%= vacancy.price %></td>
     <td><%= link_to 'Show', vacancy %></td>
+  <% if user_signed_in? %>
     <td><%= link_to 'Edit', edit_vacancy_path(vacancy) %></td>
     <td><%= link_to 'Destroy', vacancy, :confirm => 'Are you sure?', :method => :delete %></td>
+  <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New Vacancy', new_vacancy_path %>
+<% if user_signed_in? %> <%= link_to 'New Vacancy', new_vacancy_path %> <% end %>
