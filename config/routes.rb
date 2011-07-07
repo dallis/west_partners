@@ -1,17 +1,18 @@
 WestPartners::Application.routes.draw do
+  
   devise_for :users , :skip => :registrations do
   get "/logout" => "devise/sessions#destroy"
   get "/login" => "devise/sessions#new"
   end 
-
+  
+  resources :articles
   resources :categories
-
   resources :contacts
-
-  match '/articles', :to => 'pages#articles'
+  resources :vacancies
+  
   match '/faq', :to => 'pages#faq'
 
-  resources :vacancies
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

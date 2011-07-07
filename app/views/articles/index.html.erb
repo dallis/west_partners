@@ -1,0 +1,19 @@
+<h1>Listing articles</h1>
+
+<% @articles.each do |article| %>
+  
+    <%= article.title %> </br>
+    <%=raw article.content %>
+    <%= link_to 'Show', article %>
+    <% if user_signed_in? %> 
+    <%= link_to 'Edit', edit_article_path(article) %>
+    <%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %>
+    <% end %>
+  
+<% end %>
+
+
+<br />
+<% if user_signed_in? %> 
+<%= link_to 'New Article', new_article_path %>
+<% end %>

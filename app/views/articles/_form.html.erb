@@ -1,0 +1,11 @@
+<%= javascript_include_tag :ckeditor %>
+<%= semantic_form_for @article do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :title %>
+    <%= f.input :content, :input_html => {:class => 'ckeditor'} %>
+  <% end %>
+
+  <%= f.buttons do %>
+    <%= f.commit_button %>
+  <% end %>
+<% end %>
