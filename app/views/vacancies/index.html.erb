@@ -1,24 +1,32 @@
-<h1>Перелік наявних робіт</h1>
-
-
+<div style="padding:10px">
+	<span class="titletext">Перелік наявних робіт</span>
+</div>
+<% if user_signed_in? %> 
+	<%= link_to 'Додати нову роботу', new_vacancy_path %> 
+<% end %>
+<div class="bodytext" style="padding:12px;" align="justify">
 <% @vacancies.each do |vacancy| %>
-    <div id='titleind'>
-  	<%= link_to vacancy.title, vacancy %>
+    <div id='imgind'>
+  		<%= link_to (image_tag(vacancy.category.img_url,:size => "100x100",:alt => vacancy.title)),vacancy %>
+  	</div>
+  	<div id='titleind'>
+  		<strong><%= link_to vacancy.title, vacancy %></strong>
+  		<div class='clear'></div>
+  			<div id='vacind'>
+  				<div align="left" class="smallgraytext"> Вартість: <%= vacancy.price%></div>
+  			</div>
   	</div>
   	<div class='clear'></div>
-  	<div id='imgind'>
-  		<%= image_tag(vacancy.category.img_url,:size => "100x100",:alt => vacancy.title) %>
-  	</div>
   	<div id='textind'>
-    <%= truncate(vacancy.description,:length => 100, :separator => ' ') %></br>
-    <%= link_to 'дізнатись більше', vacancy %>
+	    <%= truncate(vacancy.description,:length => 60, :separator => '') %></br>
+	    <%= link_to 'дізнатись більше', vacancy %>
     </div>
   <% if user_signed_in? %>
-    <%= link_to 'Edit', edit_vacancy_path(vacancy) %>
-    <%= link_to 'Destroy', vacancy, :confirm => 'Are you sure?', :method => :delete %>
+    <div class='clear'></div>
+    <%= link_to 'Редагувати', edit_vacancy_path(vacancy) %>
+    <%= link_to 'Видалити', vacancy, :confirm => 'Are you sure?', :method => :delete %>
   <% end %>
   <div class='line'></div>
 <% end %>
-
+</div>
 <br />
-<% if user_signed_in? %> <%= link_to 'New Vacancy', new_vacancy_path %> <% end %>

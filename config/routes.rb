@@ -1,5 +1,8 @@
 WestPartners::Application.routes.draw do
-  devise_for :users, :skip => :registrations
+  devise_for :users , :skip => :registrations do
+  get "/logout" => "devise/sessions#destroy"
+  get "/login" => "devise/sessions#new"
+  end 
 
   resources :categories
 
