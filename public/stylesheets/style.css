@@ -17,10 +17,10 @@ body {
 #footer{float:left; width:800px; background-color:#F0F0F0; padding:10px;}
 
 /*my*/
-#titleind{float:left; padding: 35px 5px 5px 5px}
+#titleind{float:left; padding: 15px 5px 5px 5px}
 #vacind{float :left;padding: 5px}
-#imgind{float :left; padding: 5px}
-#textind{float :left;padding: 5px}
+#imgind{float :left; padding: 5px 5px 5px 0px}
+#textind{float :left;padding: 5px 5px 5px 5px}
 .line { clear: both; border-bottom: 1px solid #ddd; margin: 0 0 20px; }
 .clear { clear: both; }
 /*GRAY PANEL*/

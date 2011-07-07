@@ -15,12 +15,12 @@
   			<div id='vacind'>
   				<div align="left" class="smallgraytext"> Вартість: <%= vacancy.price%></div>
   			</div>
-  	</div>
-  	<div class='clear'></div>
-  	<div id='textind'>
+  		<div class='clear'></div>
+  		<div id='textind'>
 	    <%= truncate(vacancy.description,:length => 60, :separator => '') %></br>
 	    <%= link_to 'дізнатись більше', vacancy %>
-    </div>
+    	</div>
+  	</div>
   <% if user_signed_in? %>
     <div class='clear'></div>
     <%= link_to 'Редагувати', edit_vacancy_path(vacancy) %>
