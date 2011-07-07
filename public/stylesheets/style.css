@@ -21,7 +21,7 @@ body {
 #vacind{float :left;padding: 5px}
 #imgind{float :left; padding: 5px 5px 5px 0px}
 #textind{float :left;padding: 5px 5px 5px 5px}
-.line { clear: both; border-bottom: 1px solid #ddd; margin: 0 0 20px; }
+.line { clear: both; border-bottom: 1px solid #ddd; margin: 0 0 5px; }
 .clear { clear: both; }
 /*GRAY PANEL*/
 .graypanel{
