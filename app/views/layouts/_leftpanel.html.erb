@@ -4,11 +4,11 @@
 		<% if user_signed_in? %>
 		<%= link_to 'Додати статтю', new_article_path %><br />
 		<% end %>
-		<span class="smalltitle">Статті</span><br />
+		<span class="smalltitle">Статті</span><p>
 <% @articles.each do |article| %>
     <span class="smallredtext"><%= article.title %></span><br />
-    <span class="bodytextlp"><%=raw truncate(article.content, :length => 115,:separator=>'') %></span>
-    <span class="smallgraytext"><%= link_to 'детальніше', article %></span><br />
+    <span class="bodytextlp"><%=raw truncate(article.content, :length => 115,:separator=>'') %></span><br />
+    <span class="smallgraytext"><%= link_to 'детальніше', article %></span><p>
     <% if user_signed_in? %>
     <%= link_to 'Редагувати', edit_article_path(article) %>
     <%= link_to 'Видалити', article, :confirm => 'Ви впевнені що хочете видалити статтю?', :method => :delete %>
