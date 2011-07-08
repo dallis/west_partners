@@ -1,12 +1,12 @@
-<h1>Listing contacts</h1>
+<h1>Перелік запитів</h1>
 
 <table>
   <tr>
-    <th>Title</th>
-    <th>Name</th>
+    <th>Тема</th>
+    <th>Імя</th>
     <th>Email</th>
-    <th>Phone</th>
-    <th>Message</th>
+    <th>Телефон або Skype</th>
+    <th>Питання</th>
     <th></th>
     <th></th>
     <th></th>
@@ -19,13 +19,8 @@
     <td><%= contact.email %></td>
     <td><%= contact.phone %></td>
     <td><%= contact.message %></td>
-    <td><%= link_to 'Show', contact %></td>
-    <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-    <td><%= link_to 'Destroy', contact, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Показати', contact %></td>
+    <td><%= link_to 'Видалити', contact, :confirm => 'Ви впевнені, що хочете видалити запит?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Contact', new_contact_path %>

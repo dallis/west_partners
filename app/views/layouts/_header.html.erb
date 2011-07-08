@@ -11,10 +11,13 @@
 	</div>
 	<div id="toplinks" class="smallgraytext">
 		<%= link_to 'west-partners.com.ua', "http://west-partners.com.ua" %>
+		<% if user_signed_in?%>
+			<br /><%= link_to 'Запити', contacts_path%>|<%= link_to 'Категорії', categories_path%>|<%= link_to 'Вихід', '/logout'%>
+		<% end %>
 	</div>
 </div>
 <div id="menu">
 	<div align="right" class="smallwhitetext" style="padding:9px;">
-		<%= link_to 'Головна', root_path %> | <%= link_to 'Робота', vacancies_path %> |<%= link_to 'Що потрібно?', '/faq' %> |<%= link_to 'Статті', articles_path %> | <%= link_to 'Задати питання', new_contact_path %> 
+		<%= link_to 'Головна', root_path %> | <%= link_to 'Робота', vacancies_path %> |<%= link_to 'Що потрібно?', '/faq' %> | <%= link_to 'Задати питання', new_contact_path %> 
 	</div>
 </div>

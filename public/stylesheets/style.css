@@ -23,6 +23,13 @@ body {
 #textind{float :left;padding: 5px 5px 5px 5px}
 .line { clear: both; border-bottom: 1px solid #ddd; margin: 0 0 5px; }
 .clear { clear: both; }
+.newcont{background-color:#F0F0F0; padding:10px;}
+.bodytextlp {
+	font: 1em Tahoma, sans-serif;
+	color: #666666;
+	margin: 0px;
+	padding: 0px;
+}
 /*GRAY PANEL*/
 .graypanel{
 	border:solid 1px #666666; background-color:#F7F7F7; padding:10px; margin:10px;

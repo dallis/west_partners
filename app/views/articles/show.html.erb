@@ -1,15 +1,5 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>Title:</b>
-  <%= @article.title %>
-</p>
-
-<p>
-  <b>Content:</b>
-  <%=raw @article.content %>
-</p>
-
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<div class="bodytext" style="padding:12px;" align="left">
+	<span class="smalltitle" ><%= @article.title %></span><br />
+ 	<span class="bodytext"><%=raw @article.content %></span>
+</div>

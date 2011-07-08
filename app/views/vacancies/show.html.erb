@@ -5,23 +5,22 @@
 		<%= link_to("Наступна робота", @vacancy.next_vacancy) if @vacancy.next_vacancy %>
 	</div>
 </div>
-</br>
-<%= image_tag(@vacancy.category.img_url,:alt => @vacancy.title) %>
-
-<p>
-  <b>Title:</b>
-  <%= @vacancy.title %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @vacancy.description %>
-</p>
-
-<p>
-  <b>Price:</b>
-  <%= @vacancy.price %>
-</p>
-<%= link_to 'Contact', new_contact_path(:title => @vacancy.title) %> <br />
-
-<%= link_to 'Back', vacancies_path %>
+<div class="bodytext" style="padding:12px;" align="justify">
+<div align="center" style="padding:5px;">
+	<%= image_tag(@vacancy.category.img_url,:alt => @vacancy.title) %>
+</div>
+<div class='clear'></div>
+<div align="center" style="padding:5px;">
+	<strong><%= @vacancy.title %></strong>
+  	<div class='clear'></div>
+  	<div align="center" class="smallgraytext" style="padding:3px;"> Вартість: <%= @vacancy.price%></div>
+</div>
+<div class='clear'></div>
+<div id='textind'>
+	<%= @vacancy.description %>
+</div>
+<div class='clear'></div>
+<div align="left" class="smalltitle" style="padding:9px;">
+	Якщо Вас зацікавила дана пропозиція: <%= link_to 'Звяжіться з нами', new_contact_path(:title => @vacancy.title) %> <br />
+</div>
+</div>

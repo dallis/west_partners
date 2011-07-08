@@ -1,16 +1,6 @@
 class ArticlesController < ApplicationController
   before_filter :authenticate_user! , :except => [:index,:show]
-  # GET /articles
-  # GET /articles.xml
-  def index
-    @articles = Article.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @articles }
-    end
-  end
-
+  
   # GET /articles/1
   # GET /articles/1.xml
   def show
@@ -81,4 +71,4 @@ class ArticlesController < ApplicationController
       format.xml  { head :ok }
     end
   end
-end
+end 

@@ -12,15 +12,17 @@
   <% end %>
 	<%= f.inputs do%>
 	  <div class="field">
-	    <%= f.input :title, :label => "title" %><br />
-	    <%= f.input :description, :label => "description" %><br />
-	    <%= f.input :price, :label => "price" %><br />
+	    <%= f.input :title, :label => "Назва роботи" %><br />
+	    <%= f.input :description, :label => "Опис" %><br />
+	    <%= f.input :price, :label => "Вартість" %><br />
 	    <%= f.input :category, :label => "Виберіть категорію" %><br />
 	  </div>
 	<% end %>
+	<div style="margin:0">
 	<%= f.buttons do%>
 	   <div class="actions">
-	    <%= f.commit_button %>
+	    <%= f.commit_button :label => "Створити" %>
 	  </div>
 	<% end %>
+	</div>
 <% end %>

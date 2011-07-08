@@ -12,20 +12,20 @@
   <% end %>
 	<%= f.inputs do%>
 	  <div class="field">
-	    <%= f.input :title, :label => 'title', :input_html => {:value => params[:title]} %><br />
+	    <%= f.input :title, :label => 'Тема:', :input_html => {:value => params[:title]} %><br />
 	    
-	    <%= f.input :name, :label => "name" %><br />
+	    <%= f.input :name, :label => "Ваше імя:" %><br />
 	    
-	    <%= f.input :email, :label => "email" %><br />
+	    <%= f.input :email, :label => "e-mail:" %><br />
 	      
-	    <%= f.input :phone, :label => "phone" %><br />
+	    <%= f.input :phone, :label => "Телефон або Skype:" %><br />
 	      
-	    <%= f.input :message, :label => "message" %><br />    
+	    <%= f.input :message, :label => "Питання:" %><br />    
 	  </div>
 	<% end %>
 	<%= f.buttons do%>
 	  <div class="actions">
-	    <%= f.commit_button %>
+	    <%= f.commit_button :label => "Задати питання"%>
 	  </div>
 	<% end %>
 <% end %>

@@ -1,11 +1,21 @@
+<% @articles=Article.all%>
 <div id="leftpanel">
-	<div align="justify" class="graypanel">
-		<span class="smalltitle">Articles</span><br /><br />
-		<span class="smallredtext">September 27, 2006</span><br />
-		<span class="bodytext">Curabitur arcu tellus, suscipit in, aliquam eget, ultricies id, sapien. Nam est.</span><br />
-		<a href="#" class="smallgraytext">More...</a><br /><br />
-		<span class="smallredtext">September 27, 2006</span><br />
-		<span class="bodytext">Curabitur arcu tellus, suscipit in, aliquam eget, ultricies id, sapien. Nam est.</span><br />
-		<a href="#" class="smallgraytext">More...</a><br /><br />
+	<div align="left" class="graypanel">
+		<% if user_signed_in? %>
+		<%= link_to 'Додати статтю', new_article_path %><br />
+		<% end %>
+		<span class="smalltitle">Статті</span><p>
+<% @articles.each do |article| %>
+    <span class="smallredtext"><%= article.title %></span>
+    <span class="bodytext">
+    	<%=raw truncate (article.content, :length => 115,:separator => '') %>
+	</span><br />
+    <span class="smallgraytext"><%= link_to 'детальніше', article %></span><p>
+    <% if user_signed_in? %>
+    <%= link_to 'Редагувати', edit_article_path(article) %>
+    <%= link_to 'Видалити', article, :confirm => 'Ви впевнені що хочете видалити статтю?', :method => :delete %>
+    <div class='clear'></div>
+    <% end %>
+<% end %>
 	</div>
 </div>

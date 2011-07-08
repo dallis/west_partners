@@ -1,5 +1,5 @@
 class ContactsController < ApplicationController
-  before_filter :authenticate_user! , :except => "new"
+  before_filter :authenticate_user! , :except => [:new,:create,:show]
 	
   # GET /contacts
   # GET /contacts.xml
@@ -46,7 +46,7 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.save
-        format.html { redirect_to(@contact, :notice => 'Contact was successfully created.') }
+        format.html { redirect_to(root_path, :notice => 'РџРёС‚Р°РЅРЅСЏ Р±СѓР»Рѕ СѓСЃРїС–С€РЅРѕ РІС–РґРїСЂР°РІР»РµРЅРµ!') }
         format.xml  { render :xml => @contact, :status => :created, :location => @contact }
       else
         format.html { render :action => "new" }

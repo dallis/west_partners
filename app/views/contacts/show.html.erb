@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
-
+<div align="left" style="padding:5px;">
 <p>
-  <b>Title:</b>
+  <b>Тема:</b>
   <%= @contact.title %>
 </p>
 
 <p>
-  <b>Name:</b>
+  <b>Імя:</b>
   <%= @contact.name %>
 </p>
 
@@ -16,15 +16,15 @@
 </p>
 
 <p>
-  <b>Phone:</b>
+  <b>Телефон:</b>
   <%= @contact.phone %>
 </p>
 
 <p>
-  <b>Message:</b>
+  <b>Повідомлення:</b>
   <%= @contact.message %>
 </p>
 
-
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
+<%= link_to 'Видалити', @contact, :confirm => 'Ви впевнені, що хочете видалити запит?', :method => :delete %>
+<%= link_to 'Назад', contacts_path %>
+</div>
