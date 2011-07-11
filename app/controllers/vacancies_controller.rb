@@ -3,8 +3,8 @@ class VacanciesController < ApplicationController
   # GET /vacancies
   # GET /vacancies.xml
   def index
-    @vacancies = Vacancy.all
-
+    @vacancies = Vacancy.paginate(:page => params[:page],:per_page =>6)
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @vacancies }
