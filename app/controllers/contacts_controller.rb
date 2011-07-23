@@ -46,7 +46,7 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.save
-        format.html { redirect_to(root_path, :notice => 'Дякуєм за Ваше запитання!') }
+        format.html { redirect_to(root_path, :notice => 'Contact was successfully created.') }
         format.xml  { render :xml => @contact, :status => :created, :location => @contact }
       else
         format.html { render :action => "new" }
