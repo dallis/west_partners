@@ -2,10 +2,10 @@
 <%= semantic_form_for @article do |f| %>
   <%= f.inputs do %>
     <%= f.input :title, :label => "Назва:" %>
-    <%= f.input :content, :label => "Текст статті", :input_html => {:class => 'ckeditor'} %>
+    <%= f.input :content, :input_html => {:class => 'ckeditor'}, :label => "Текст статті", :required => false %>
   <% end %>
 
   <%= f.buttons do %>
-    <%= f.commit_button :label => "Створити"%>
+    <%= f.commit_button %>
   <% end %>
 <% end %>
