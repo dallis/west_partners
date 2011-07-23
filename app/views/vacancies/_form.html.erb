@@ -1,3 +1,4 @@
+<%= javascript_include_tag :ckeditor %>
 <%= semantic_form_for(@vacancy) do |f| %>
   <% if @vacancy.errors.any? %>
     <div id="error_explanation">
@@ -13,7 +14,8 @@
 	<%= f.inputs do%>
 	  <div class="field">
 	    <%= f.input :title, :label => "Назва роботи" %><br />
-	    <%= f.input :description, :label => "Опис" %><br />
+	    <%= f.input :short_desc, :label => "Короткий опис" %><br />
+	    <%= f.input :description, :input_html => {:class => 'ckeditor'}, :label => "Опис роботи", :required => false %><br />
 	    <%= f.input :price, :label => "Вартість" %><br />
 	    <%= f.input :category, :label => "Виберіть категорію" %><br />
 	  </div>
