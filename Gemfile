@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'devise'
 gem 'ckeditor', '3.5.4'
 gem "will_paginate"
+gem 'thin'
 # Use unicorn as the web server
 # gem 'unicorn'
 
