@@ -1,14 +1,14 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.7'
+gem 'rails', '3.0.19'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-gem 'formtastic', '2.0.0.rc1'
+gem 'formtastic', '2.0.0'
 gem 'sqlite3'
 gem 'devise'
-gem 'ckeditor'
-gem "will_paginate", "~> 3.0.pre2"
+gem 'ckeditor', '3.5.4'
+gem "will_paginate"
 # Use unicorn as the web server
 # gem 'unicorn'
 
