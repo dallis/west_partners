@@ -122,6 +122,7 @@ DEPENDENCIES
   devise
   formtastic (= 2.0.0)
   rails (= 3.0.19)
+  rake
   rspec
   rspec-rails
   sqlite3
